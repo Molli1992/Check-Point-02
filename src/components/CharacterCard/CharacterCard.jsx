@@ -5,11 +5,11 @@ const CharacterCard = (props) => {
     
     return (
         <div>
-          <img src={character.imageUrl} alt=""/>
-          <p>ID: {character.id}</p>
-          <p>Name: {character.fullName}</p>
-          <p>Title: {character.title}</p>
-          <p>Family: {character.family}</p>
+          <img src={props.imageUrl}/>
+          <p>ID: {props.id}</p>
+          <p>Name: {props.fullName}</p>
+          <p>Title: {props.title}</p>
+          <p>Family: {props.family}</p>
         </div>
     );
 };

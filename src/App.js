@@ -1,6 +1,5 @@
 import { Route } from "react-router-dom";
 import CreateHouse from "./components/CreateHouse/CreateHouse";
-import HouseCard from "./components/HouseCard/HouseCard";
 import HouseDetail from "./components/HouseDetail/HouseDetail";
 import Houses from "./components/Houses/Houses";
 import Nav from "./components/Nav/Nav";

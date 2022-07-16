@@ -10,7 +10,7 @@ const store = createStore(
 
 export default store;
 
-import { createStore, applyMiddleware, compose } from "redux";
+/* import { createStore, applyMiddleware, compose } from "redux";
 import rootReducer from "../reducers/index";
 import thunk from "redux-thunk";
 import { composeWhitDevTools } from "redux-devtools-extension";
@@ -18,4 +18,4 @@ import { composeWhitDevTools } from "redux-devtools-extension";
 
 const store = createStore(rootReducer, compose(applyMiddleware(thunk)), composeWhitDevTools);
 
-export default store;
+export default store; */
