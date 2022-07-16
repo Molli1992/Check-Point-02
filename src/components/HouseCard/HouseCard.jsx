@@ -40,7 +40,7 @@ export default connect(null, mapDispatchToProps)(HouseCard);
 
 
 
-
+///
 
 /* function mapStateToProps(state) {
     return {

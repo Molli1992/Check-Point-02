@@ -50,7 +50,7 @@ export default CreateHouse;
 
 
 
-/////**** */
+///////
 
 
 /* function mapStateToProps(state) {
