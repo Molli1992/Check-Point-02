@@ -1,19 +1,21 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { HouseCard } from '../HouseCard/HouseCard';
+import { getAllHouses } from "../../redux/actions/index";
 
 // CUIDADOOOO. SI O SI CLASS COMPONENT! SE ROMPEN LOS TEST EN CASO CONTRARIO!!
 // TAMBIEN VAS A TENER QUE USAR EL METODO CONNECT DE REDUX, JUNTO A MAP_STATE_TO_PROPS 
 // Y MAP_DISPATCH_TO_PROPS!! <3
 
 export class Houses extends Component {
-  /*constructor(props){
-    super(props);
-  };*/
+  constructor(props){
+    super(props)
+    this.state = {};
+  }
   
-  /* componentDidMount(){
+  componentDidMount(){
     this.props.getAllHouses();
-  };*/
+  }
   
     render() {
         return (
@@ -22,30 +24,36 @@ export class Houses extends Component {
                    <img src="main-image-cp2.jpg" alt="main-img"/>
                    <h3>Houses</h3>
                      {
-                          this.props.houses?.map((h) =>(
-                          <HouseCard 
-                           id={h.id}
-                           region={h.region}
-                           name={h.name}
-                           words={h.words}
-                           characters={h.characters}
+                          this.props.houses && this.props.houses.map((houses) =>{
+                            return (
+                              <HouseCard 
+                           key={houses.id}
+                           id={houses.houseId}
+                           region={houses.region}
+                           name={houses.name}
+                           characters={houses.characters}
+                           words={houses.words}
                           />
-                          ))
+                            )
+                          })
                      }
           </div>
         );
     };
 };
 
-export const mapStateToProps = function(state) {
+export function mapStateToProps(state) {
     return {
       houses: state.houses
     };
   };
 
-  export const mapDispatchToProps = {
-    getAllHouses: (houses) => dispatch(getAllHouses(houses))
+  export function mapDispatchToProps(dispatch) {
+    return {
+      getAllHouses: () => dispatch(getAllHouses())
+    };
   };
+    
 
 export default connect(mapStateToProps, mapDispatchToProps)(Houses);
 
