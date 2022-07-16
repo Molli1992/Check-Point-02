@@ -33,7 +33,7 @@ if (action.type === GET_HOUSE) {
 if (action.type === DELETE_HOUSE) {
   return {
     ...state,
-    houses: state.houses.filter(movie => movie.id !== action.payload)
+    houses: state.houses.filter(house => house.id !== action.payload)
 };
 };
 
